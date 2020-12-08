@@ -1,0 +1,33 @@
+h1 {
+  font: 500 32px "Roboto", "Helvetica Neue", sans-serif;
+  line-height: 40px;
+  margin: 0 0 20px;
+}
+
+.btn-purple {
+  background: #673ab7;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: .8rem 0 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: .35rem 1rem;
+  border-radius: 4px;
+  overflow: visible;
+}

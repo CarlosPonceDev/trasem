@@ -1,0 +1,26 @@
+.py-0 {
+  padding-bottom: .09rem!important;
+  padding-top: .09rem!important;
+}
+
+.btn-color-disabled:disabled {
+  color: #673ab7;
+}
+
+.isDisabled {
+  opacity: 0.5;
+  cursor: default;
+  color: currentColor;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.enable {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.enable:hover {
+  opacity: .8 !important;
+  color: white !important;
+}

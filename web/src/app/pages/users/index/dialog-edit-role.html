@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Cambiar el rol de usuario</h1>
+<div mat-dialog-content>
+  <!-- <p>Escribe un nuevo correo y tu contraseña</p> -->
+  <mat-slide-toggle color="primary" [checked]="isAdmin" (change)="isAdmin = !isAdmin">
+    <span *ngIf="isAdmin">Es administrador</span>
+    <span *ngIf="!isAdmin">No es administrador</span>
+  </mat-slide-toggle>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-end mt-3">
+  <button mat-button (click)="close()" color="info" class="btn-text text-uppercase mr-2">cancelar</button>
+  <button mat-raised-button color="primary" (click)="editAsAdmin()" class="btn-text text-uppercase">Guardar</button>
+</div>

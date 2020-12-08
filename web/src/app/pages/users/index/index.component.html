@@ -1,0 +1,73 @@
+<section class="container py-5 px-3">
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-2">Usuarios</h2>
+    <a mat-stroked-button [routerLink]="[routes.users.create]" class="text-uppercase py-1 text-decoration-none btn-text"
+      color="primary"
+      style="margin-top: .18rem!important; padding-bottom: .5rem !important; padding-top: .5rem !important;">
+      <mat-icon matSuffix>add_box</mat-icon>
+      <span class="pt-1 ml-2">Añadir</span>
+    </a>
+  </div>
+  <div class="underline mb-5"></div>
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label style="color: #212529;" class="pl-2">Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Mia" #input>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  
+  <div class="mt-5" *ngIf="isEmpty">
+    <app-empty-result></app-empty-result>
+  </div>
+  <div class="border-gray rounded-lg" *ngIf="!isEmpty">
+    <table mat-table [dataSource]="dataSource" matSort class="w-100 rounded-lg">
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="pl-2 pl-sm-4">Nombre</th>
+        <td mat-cell *matCellDef="let row" class="pl-2 pl-sm-4"> {{row.name}} </td>
+      </ng-container>
+  
+      <!-- Progress Column -->
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Rol</th>
+        <td mat-cell *matCellDef="let row"> {{row.role}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="pr-0"></th>
+        <td mat-cell *matCellDef="let row" height="48" class="pr-0 d-flex">
+          <button mat-button (click)="delete(row.id)" color="error" style="min-width: 50px;">
+            <mat-icon matSuffix>delete</mat-icon>
+          </button>
+          <button mat-button (click)="edit(row.id, row.role)" color="accent" style="min-width: 50px;">
+            <mat-icon matSuffix>edit</mat-icon>
+          </button>
+          <!-- <a [routerLink]="['/signs']" routerLinkActive="router-link-active" mat-button color="accent" class="d-flex align-items-center" style="min-width: 50px;">
+            <mat-icon matSuffix>edit</mat-icon>
+          </a> -->
+        </td>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <!-- <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <a [routerLink]="['/signs']" routerLinkActive="router-link-active" mat-button color="accent">
+            <mat-icon matSuffix>edit</mat-icon>
+          </a>
+        </td>
+      </ng-container> -->
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</section>

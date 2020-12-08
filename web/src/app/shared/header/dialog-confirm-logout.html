@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Salir</h1>
+<div mat-dialog-content>
+  <p>¿Seguro que deseas salir?</p>
+</div>
+<div mat-dialog-actions class="d-flex justify-content-end py-4">
+  <button mat-raised-button (click)="onNoClick()" color="info" class="btn-text text-uppercase">cancelar</button>
+  <button mat-raised-button (click)="logout()" color="warn" class="btn-text text-uppercase">Salir</button>
+</div>

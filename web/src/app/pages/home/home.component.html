@@ -1,0 +1,297 @@
+<section class="star-pattern">
+  <div class="container">
+    <h2 class="pt-5 text-center mx-3">Aprende la lengua de señas mexicas y diviértete</h2>
+    <div class="row text-center justify-content-center mb-4 mb-md-5">
+      <div class="col-12 col-md-6 col-lg-4 px-4 px-sm-5 px-md-4 px-lg-5">
+        <a mat-flat-button [routerLink]="[routes.categories.index]"
+          class="text-uppercase btn-tall rounded-lg py-1 btn-block text-decoration-none mb-4" color="primary">Empezar</a>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 px-4 px-sm-5 px-md-5">
+        <a mat-stroked-button [routerLink]="[routes.login]"
+          class="text-uppercase btn-tall bg-white rounded-lg py-1 btn-block text-decoration-none mb-4" color="primary">Ya tengo una cuenta</a>
+      </div>
+    </div>
+    <div class="col-12 col-md-8 mx-auto">
+      <img class="img-fluid" src="assets/img/inclusion.png" alt="Imagen de personas tomadas de las manos">
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section style="background-color: white; padding:  80px 0;">
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-center px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/waving-hand.svg" height="105px" width="105px" alt="Imagen de personas conversando">
+      </div>
+      <div class="col-8 col-sm-9 col-md-10 pl-3 pl-sm-4 pr-0">
+        <h2 class="mb-2 text-uppercase">LSM</h2>
+        <div class="underline mb-4"></div>
+        <p class="lead" style="line-height: initial;">
+          La lengua de señas mexicana es el medio con el cual se comunica la sociedad sorda de nuestro país.
+        </p>
+      </div>
+      <p class="lead mt-2" style="line-height: initial;">Una lengua que como cualquier otra, posee y cumple todas las leyes lingüísticas y se aprende dentro de la comunidad de usuarios a quienes se les facilita resolver todas las necesidades comunicativas y no comunicativas propias del ser humano, social y cultural.</p>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section class="star-pattern" style="padding:  80px 0;">
+  <div class="container">
+    <h2 class="mb-2">Aprende</h2>
+    <div class="underline mb-5"></div>
+    <div class="row px-3">
+      <div class="col-12 col-sm-6 col-md-4 col-xl-3 mx-auto mb-5" *ngFor="let category of mCategories">
+        <a [routerLink]="['/categories/dictionary', category.name]">
+          <mat-card class="shadow-none border-gray rounded-pill p-4 text-center">
+            <img class="img-fluid" [src]="category.image_url" height="80px" width="80px" alt="Icono de {{category.name}}">
+            <mat-card-header class="d-block mt-3">
+              <mat-card-title>{{category.name}}</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section style="background-color: white; padding: 80px 0;">
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-8 col-sm-9 col-md-10 pr-3 pr-sm-4 pr-0">
+        <h2 class="mb-2">Meta</h2>
+        <div class="underline mb-4"></div>
+        <p class="lead" style="line-height: initial;">
+          Este proyecto busca a través del uso de material transmedio facilitar el acceso, además de generar un acercamiento en el aprendizaje y/o práctica de la LSM de manera incluyente.
+        </p>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-star px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/project.svg" height="105px" width="105px"
+          alt="Imagen de personas conversando">
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section class="star-pattern" style="padding: 50px 0 80px;">
+  <div class="container">
+    <h2 class="mb-2 mt-5">¿Sabías qué?</h2>
+    <div class="underline mb-5"></div>
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/calendar.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">El <strong>Día Internacional de la Sordera</strong> también conocido como <strong>Día de la Sordera</strong>, se celebra el último domingo de
+            septiembre.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/ear.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">El <strong>0.62%</strong> de las personas en <strong>México</strong> tienen dificultades para escuchar</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/bebe.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">En el país, cada <strong>año</strong> nacen alrededor de <strong>2,000</strong> a <strong>6,000</strong> niños <strong>sordos</strong></p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/family.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">El <strong>90%</strong> de las personas <strong>sordas</strong> tienen padres e hijos <strong>oyentes</strong></p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/word-of-mouth.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">La mayoría de los sordos <strong>NO</strong> son <strong>mudos</strong></p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/sign-language.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title></mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">La lengua natural de las personas <strong>sordas</strong> es la Lengua de Señas <strong>(LSM)</strong></p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section style="background-color: white; padding: 110px 0 50px;">
+  <div class="container">
+    <div class="row px-3">
+      <div class="order-2 order-lg-1 col-12 col-lg-6 text-center d-flex align-items-center justify-content-center px-0">
+        <img class="img-fluid" src="assets/img/espanol-signado.gif" alt="Imagen de personas tomadas de las manos">
+      </div>
+      <div class="order-1 order-lg-2 col-12 col-lg-6">
+        <h2 class="mb-2">Español signado</h2>
+        <div class="underline mb-5"></div>
+        <p class="lead" style="line-height: initial;">
+          Es la traducción literal del español al lenguaje de señas, es decir, no se respeta las formas gramaticales de la LSM,
+          la cual cuenta con una diferente a la del castellano, además de tratarse de una traducción que es similar a deletrar
+          una palabra.
+        </p>
+        <p class="lead" style="line-height: initial;">
+          Su principal objetivo es generar un sistema de comunicación que sea mas cercano al oyente, es decir el castellano,
+          para así hacer una traducción más sencilla hacia las personas cercanas al hablante.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section class="star-pattern" style="padding: 100px 0 80px;">
+  <div class="container">
+    <h2 class="mb-2">Utilize los términos: personas sordas y sordos</h2>
+    <div class="underline mb-5"></div>
+    <div class="row">
+      <div class="col-12 col-md-6 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/silent.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title>No diga sordomudos</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">Ser mudo se asocia con silencio y sin voz, con una persona que no tiene nada que decir.
+            Y por otro lado, ser sordo no necesariamente se relaciona a un mal funcionanmiento de las cuerdas vocales.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-md-6 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/deafness.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title>No diga padece discapacidad auditiva</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">
+              La sordera es una condición de vida, no es una enfermedad ni un padecimiento curable.
+              Desde el modelo social, lo que se padece es la exclusión, la falta de accesibilidad, las actitudes.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-md-6 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/hands.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title>No diga lenguaje de señas mexicanas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">
+              El término correcto es Lengua de Señas Mexicana (LSM) y es una lenga reconocida oficialmente como patrimonio de la nación.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-12 col-md-6 mx-auto mb-4">
+        <mat-card class="shadow-none border-gray rounded-lg p-4 h-100">
+          <div class="d-flex justify-content-center">
+            <img src="assets/img/icons/languages.svg" class="img-fluid" height="80px" width="80px" alt="Icono de ">
+          </div>
+          <mat-card-header class="d-block text-center mt-3">
+            <mat-card-title>No diga lenguaje de señas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="mt-3">
+            <p class="font-size-15px">
+              Las lenguas de señas son equiparables a cualquier lengua oral, con estructura gramatical definida.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">
+<section style="background-color: white; padding: 80px 0;">
+  <div class="container">
+    <h2 class="mb-2">Cuatro nociones sobre el lenguaje de señas</h2>
+    <div class="underline mb-5"></div>
+    <div class="row px-3">
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-center px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/1-sign.svg" height="105px" width="105px"
+          alt="Imagen de personas conversando">
+      </div>
+      <div class="col-8 col-sm-9 col-md-10 pl-3 pl-sm-4 pr-0 mt-auto">
+        <p class="lead" style="line-height: initial;"><strong>1. </strong>Todas las lenguas de señas son diferentes al igual que los idiomas.</p>
+        <hr>
+      </div>
+      <div class="col-8 col-sm-9 col-md-10 pr-3 pr-sm-4 pr-0 mt-auto pt-3">
+        <p class="lead text-right" style="line-height: initial;"><strong>2. </strong>La lengua de señas es creada por la propia comunidad sorda.</p>
+        <hr>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-star px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/2-sign.svg" height="105px" width="105px"
+          alt="Imagen de personas conversando">
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-center px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/3-sign.svg" height="105px" width="105px"
+          alt="Imagen de personas conversando">
+      </div>
+      <div class="col-8 col-sm-9 col-md-10 pl-3 pl-sm-4 pr-0 mt-auto pt-3">
+        <p class="lead" style="line-height: initial;"><strong>3. </strong>El gesto corporal y facial también forman parte de las señas.</p>
+        <hr>
+      </div>
+      <div class="col-8 col-sm-9 col-md-10 pr-3 pr-sm-4 pr-0 mt-auto pt-3 pt-md-5">
+        <p class="lead text-right ml-auto max-witdth" style="line-height: initial;"><strong>4. </strong>Es un lenguage vivo; los perros ladran woof woof y en español es guau guau, y esto no
+          significa que los perros ladren en diferentes idiomas. Lo mismo sucede en LS, la lingüística tiene sus propias convenciones y estructuras.</p>
+        <hr>
+      </div>
+      <div class="col-4 col-sm-3 col-md-2 text-center d-flex align-items-center justify-content-star px-0">
+        <img class="img-fluid rounded-lg" src="assets/img/icons/4-sign.svg" height="105px" width="105px"
+          alt="Imagen de personas conversando">
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="margin: 0;">

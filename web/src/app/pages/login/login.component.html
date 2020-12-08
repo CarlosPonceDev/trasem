@@ -1,0 +1,48 @@
+<section class="star-pattern">
+  <div class="d-flex h-100 justify-content-center align-items-center py-5">
+    <mat-card class="col-10 col-sm-7 col-md-5 col-lg-4 mx-auto shadow-none border-gray px-3">
+      <mat-card-header class="mt-4">
+        <mat-card-title>Ingresar</mat-card-title>
+      </mat-card-header>
+      <div class="underline ml-3 mb-4"></div>
+      <div class="px-0 px-sm-3 my-3 my-sm-4">
+        <button (click)="loginWithGoogle()" mat-stroked-button
+          class="text-uppercase btn-block btn-tall text-decoration-none">
+          <img class="img-fluid" src="assets/img/icons/google.svg" height="18px" width="18px"
+            alt="Icono de google">
+          <span class="ml-2 ml-sm-3 btn-text">Ingresar con google</span>
+        </button>
+      </div>
+      <h6 class="mx-auto my-6"><span>o bien</span></h6>
+      <form class="mx-0 px-sm-3" [formGroup]="loginForm" (ngSubmit)="logIn()" #formDir="ngForm" autocomplete="off">
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Correo eléctronico</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="text-right mt-2 mb-4 mr-1">
+            <a href="" class="text-decoration-none">¿Olvidó la contraseña?</a>
+          </div>
+        </mat-card-content>
+        <button type="submit" [disabled]="!formDir.valid" mat-flat-button color="primary" class="btn-block text-uppercase py-1 btn-text">Iniciar sesión</button>
+      </form>
+      <div class="text-center mt-4 mb-3">
+        ¿No tienes una cuenta?
+        <a [routerLink]="[routes.register]" class="text-decoration-none">Regístrate</a>
+      </div>
+    </mat-card>
+  </div>
+  <div class="overlay" *ngIf="loading">
+    <div class="center">
+      <app-progress-spinner></app-progress-spinner>
+    </div>
+  </div>
+</section>

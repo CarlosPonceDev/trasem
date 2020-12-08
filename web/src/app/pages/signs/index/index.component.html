@@ -1,0 +1,40 @@
+<section class="container py-5 px-3">
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-2">Señas</h2>
+    <a mat-stroked-button [routerLink]="[routes.signs.create]"
+      class="text-uppercase py-1 text-decoration-none btn-text" color="primary"
+      style="margin-top: .18rem!important; padding-bottom: .5rem !important; padding-top: .5rem !important;">
+      <mat-icon matSuffix>add_box</mat-icon>
+      <span class="pt-1 ml-2">Añadir</span>
+    </a>
+  </div>
+  <div class="underline mb-5"></div>
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label style="color: #212529;" class="pl-2">Buscar</mat-label>
+    <input matInput id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+      placeholder="Ingrese el texto a buscar" autofocus>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <div class="mt-5" *ngIf="isEmpty">
+    <app-empty-result></app-empty-result>
+  </div>
+  <div class="row mt-4" *ngIf="!isEmpty">
+    <div class="col-6 col-sm-4 col-lg-3 mx-auto mb-4" *ngFor="let sign of mSigns | filter: searchText">
+      <mat-card class="shadow-none border-gray rounded-lg h-100">
+        <mat-card-title class="text-truncate">{{sign.name}}</mat-card-title>
+        <mat-card-subtitle>{{sign.category}}</mat-card-subtitle>
+        <img mat-card-image src="{{sign.image_url}}" name="" alt="">
+
+        <mat-card-content>
+          <p class="mx-1">{{sign.description}}</p>
+        </mat-card-content>
+        <mat-card-actions class="mx-1 mb-2">
+          <button mat-stroked-button (click)="delete(sign.id)" color="warn" class="btn-text text-uppercase btn-block mb-2">
+            Eliminar
+          </button>
+          <a [routerLink]="['/signs/edit', sign.id]" routerLinkActive="router-link-active" mat-flat-button color="accent" class="btn-text text-uppercase text-decoration-none btn-block">Editar</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>
