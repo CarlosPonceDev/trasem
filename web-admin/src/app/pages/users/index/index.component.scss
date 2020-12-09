@@ -1,0 +1,17 @@
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.card-avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.badge-purple {
+  color: white;
+  background-color: #673ab7;
+}

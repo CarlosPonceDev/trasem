@@ -1,0 +1,52 @@
+<section class="container py-5 px-3">
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-2">Usuarios</h2>
+    <a mat-stroked-button [routerLink]="[routes.users.create]" class="text-uppercase py-1 text-decoration-none btn-text"
+      color="primary"
+      style="margin-top: .18rem!important; padding-bottom: .5rem !important; padding-top: .5rem !important;">
+      <mat-icon matSuffix>add_box</mat-icon>
+      <span class="pt-1 ml-2">Añadir</span>
+    </a>
+  </div>
+  <div class="underline mb-5"></div>
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-4 ml-2 order-1 order-md-3 pl-md-1 pl-lg-2">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label style="color: #212529;" class="pl-2">Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Mia" #input>
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="mt-5" *ngIf="isEmpty">
+    <app-empty-result></app-empty-result>
+  </div>
+  <div class="border-gray rounded-lg" *ngIf="!isEmpty">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo electrónico</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of mUsers">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button mat-button (click)="delete(user.id)" color="error" class="d-inline" style="min-width: 50px;">
+              <mat-icon matSuffix>delete</mat-icon>
+            </button>
+            <button mat-button (click)="edit(user.id, user.role)" color="accent" style="min-width: 50px;">
+              <mat-icon matSuffix>edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

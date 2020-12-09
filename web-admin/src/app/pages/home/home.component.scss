@@ -1,0 +1,25 @@
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0 0 50px;
+}
+
+@media (min-width: 576px) {
+  
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 992px) {
+  .max-witdth {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .max-witdth {
+    max-width: 80%;
+  }
+}

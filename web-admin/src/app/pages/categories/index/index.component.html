@@ -1,0 +1,52 @@
+<section class="container py-5">
+  <h2 class="mb-2 ml-3 ml-sm-0">Aprender</h2>
+  <div class="underline mb-5 ml-3 ml-sm-0"></div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-8">
+      <div class="row">
+        <div class="col-11 col-sm-6 col-md-12 col-lg-6 mx-auto mb-4" *ngFor="let category of mCategories">
+          <mat-card class="shadow-none border-gray rounded-lg p-4">
+            <div class="d-flex justify-content-center">
+              <img class="img-fluid" [src]="category.image_url" height="80px" width="80px" alt="Icono de {{category.title}}">
+            </div>
+            <mat-card-header class="d-block text-center mt-3">
+              <mat-card-title class="text-capitalize">{{category.title}}</mat-card-title>
+            </mat-card-header>
+            <!-- <mat-card-content class="mt-3">
+              <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            </mat-card-content> -->
+            <mat-divider class="mt-1"></mat-divider>
+            <a mat-flat-button [routerLink]="['/categories/dictionary', category.title]"
+              class="text-uppercase btn-block py-1 text-decoration-none btn-text mt-4 mb-2" color="primary">Estudiar</a>
+            <!-- <a mat-flat-button [routerLink]="routes.categories.practice" class="text-decoration-none"
+              class="text-uppercase btn-block py-1 text-decoration-none btn-text" color="primary">Practicar</a> -->
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <!-- <mat-card class="col-11 col-md-12 mx-auto d-none d-md-block shadow-none border-gray rounded-lg p-4 mb-4">
+        <div class="d-flex justify-content-center">
+          <img class="img-fluid" src="assets/img/icons/users.svg" height="90px" width="90px" alt="Icono usuarios">
+        </div>
+        <mat-card-header class="d-block text-center mt-3">
+          <mat-card-title>¡Guarda tu progreso!</mat-card-title>
+        </mat-card-header>
+        <a mat-flat-button [routerLink]="[routes.register]" class="text-decoration-none"
+          class="text-uppercase btn-block py-1 text-decoration-none btn-text mt-1 mb-2" color="accent">Registrarme</a>
+        <a mat-stroked-button [routerLink]="[routes.login]" class="text-decoration-none"
+          class="text-uppercase btn-block py-1 text-decoration-none btn-text" color="info">Iniciar sesión</a>
+      </mat-card> -->
+      <mat-card class="col-11 col-md-12 mx-auto shadow-none border-gray rounded-lg p-4">
+        <div class="d-flex justify-content-center">
+          <img class="img-fluid" src="assets/img/icons/suggestion.svg" height="90px" width="90px" alt="Icono sugerencia">
+        </div>
+        <mat-card-header class="d-block text-center mt-3">
+          <mat-card-title>¿Hace falta una seña?</mat-card-title>
+        </mat-card-header>
+        <a mat-flat-button [routerLink]="[routes.suggestions.create]" class="text-decoration-none"
+          class="text-uppercase btn-block py-1 text-decoration-none btn-text mt-2 mb-2" color="accent">Sugerir</a>
+      </mat-card>
+    </div>
+  </div>
+</section>

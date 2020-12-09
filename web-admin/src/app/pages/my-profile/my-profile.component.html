@@ -1,0 +1,36 @@
+<section class="container py-5 px-3">
+  <h2 class="mb-2">Mi perfil</h2>
+  <div class="underline mb-5"></div>
+  <mat-card class="shadow-none border-gray rounded-lg">
+    <mat-card-header class="mb-4 d-flex align-items-center">
+      <div mat-card-avatar class="avatar-image"></div>
+      <mat-card-title>{{mUser.name}}</mat-card-title>
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="ml-auto mr-0 mr-sm-3 mr-lg-4" aria-label="Example icon-button with a menu">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openDialog()">
+          <mat-icon>edit</mat-icon>
+          <span>Cambiar nombre</span>
+        </button>
+      </mat-menu>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list class="rounded-lg p-1" style="background-color: #fafafa;">
+        <mat-list-item>
+          <div mat-line class="text-uppercase font-size-13px" style="color: rgba(0,0,0,.54); font-weight: 500;">Correo eléctronico</div>
+          <div mat-line style="font-size: medium;">{{ mUser.email }}</div>
+        </mat-list-item>
+      </mat-list>
+      <mat-list class="mb-3">
+        <hr class="mt-4">
+        <div mat-subheader class="text-uppercase" style="font-size: initial;">Contraseña</div>
+        <mat-list-item>
+          <button mat-raised-button color="primary" (click)="openPasswordDialog()" class="btn-text text-uppercase">
+            <span class="mx-1">cambiar contraseña</span>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

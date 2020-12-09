@@ -1,0 +1,37 @@
+<section class="star-pattern">
+  <div class="d-flex h-100 justify-content-center align-items-center py-5">
+    <mat-card class="col-10 col-sm-7 col-md-5 col-lg-4 mx-auto shadow-none border-gray px-3">
+      <mat-card-header class="mt-4">
+        <mat-card-title>Ingresar</mat-card-title>
+      </mat-card-header>
+      <div class="underline ml-3 mb-4"></div>
+      <div class="px-0 px-sm-3 my-3 my-sm-4">
+        <button (click)="loginWithGoogle()" mat-stroked-button
+          class="text-uppercase btn-block btn-tall text-decoration-none">
+          <img class="img-fluid" src="assets/img/icons/google.svg" height="18px" width="18px"
+            alt="Icono de google">
+          <span class="ml-2 ml-sm-3 btn-text">Ingresar con google</span>
+        </button>
+      </div>
+      <h6 class="mx-auto my-6"><span>o bien</span></h6>
+      <form class="mx-0 px-sm-3" [formGroup]="loginForm" (ngSubmit)="logIn()" #formDir="ngForm" autocomplete="off">
+        <mat-card-content>
+          <mat-label>Correo eléctronico:</mat-label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <label>Contraseña:</label>
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput [type]="'password'" formControlName="password">
+          </mat-form-field>
+        </mat-card-content>
+        <button type="submit" [disabled]="!formDir.valid" mat-flat-button color="primary" class="btn-block text-uppercase py-1 btn-text">Iniciar sesión</button>
+      </form>
+    </mat-card>
+  </div>
+  <div class="overlay" *ngIf="loading">
+    <div class="center">
+      <mat-progress-spinner mode="indeterminate" value="100" *ngIf="loading"></mat-progress-spinner>
+    </div>
+  </div>
+</section>

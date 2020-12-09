@@ -1,0 +1,50 @@
+<section class="container py-5">
+  <h2 class="mb-2 ml-3 ml-sm-0">Practicar</h2>
+  <div class="underline mb-5 ml-3 ml-sm-0"></div>
+  <mat-card class="shadow-none border-gray rounded-lg">
+    <div class="d-flex justify-content-center mt-3">
+      <img src="https://material.angular.io/assets/img/examples/shiba2.jpg" height="220px" width="220px" alt="Photo of a Shiba Inu">
+    </div>
+    <mat-card-subtitle class="text-center mt-4">Elige la respuesta correcta</mat-card-subtitle>
+    <mat-card-content class="mt-3 p-3">
+      <div class="row text-center">
+        <div class="col-12 col-md-6 mb-4">
+          <mat-card class="shadow-none border-purple" role="button" tabindex="0">
+            <mat-card-header class="d-block text-center mt-3">
+              <mat-card-title>A</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+          <mat-card class="shadow-none border-purple" role="button" tabindex="0">
+            <mat-card-header class="d-block text-center mt-3">
+              <mat-card-title>B</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-md-3">
+          <mat-card class="shadow-none border-purple" role="button" tabindex="0">
+            <mat-card-header class="d-block text-center mt-3">
+              <mat-card-title>C</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-md-3">
+          <mat-card class="shadow-none border-purple" role="button" tabindex="0">
+            <mat-card-header class="d-block text-center mt-3">
+              <mat-card-title>D</mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="px-3">
+      <a mat-stroked-button [routerLink]="[routes.categories.index]"
+        class="text-uppercase btn-block py-2 text-decoration-none btn-text mt-5 mb-3" color="primary">
+        <mat-icon matSuffix>keyboard_backspace</mat-icon>
+        <span class="pt-1 ml-2">Regresar</span>
+      </a>
+    </div>
+  </mat-card>
+</section>
